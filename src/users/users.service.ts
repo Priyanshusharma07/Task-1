@@ -130,4 +130,8 @@ export class UsersService {
     };
   }
 
+  async getAllUsers(): Promise<User[]> {
+    return this.userRepo.find({ relations: ['userType', 'onboardingDetails'] });
+  }
+
 }
